@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="nopCommerce Regression Suite">
+<parameter name="browser" value="Edge"></parameter>  
+<test name="regression Test">
+    <classes><!--DE 3dd el test classes el htkon 3ndy-->
+      <class name="tests.UserRegistrationTest"/>
+    </classes>
+  </test> 
+</suite> 
