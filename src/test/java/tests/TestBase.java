@@ -3,6 +3,7 @@ package tests;
 //import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -40,7 +41,14 @@ public class TestBase extends AbstractTestNGCucumberTests{
 			System.setProperty("webdriver.edge.driver", System.getProperty("user.dir")+"/Drivers/msedgedriver.exe");
 			driver= new EdgeDriver();
 		}
-		
+		else if(browserName.equalsIgnoreCase("chrome-headless")){
+			System.setProperty("webdriver.chrome.driver",
+					System.getProperty("user.dir")+"/Drivers/chromedriver.exe");
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--headless");
+			options.addArguments("--window-size=1920,1080");
+			driver = new ChromeDriver(options);
+		}
 		driver.manage().window().maximize();
 		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		driver.get("https://demo.nopcommerce.com/");

@@ -66,6 +66,7 @@ public class UserRegistrationpage extends PageBase
 		clickButton(LogOutBtn);
 	}
 	public void userEnterMyAccountPage() {
+
 		clickButton(MyAccountBtn);
 	}
 
